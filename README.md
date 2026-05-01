@@ -1,30 +1,47 @@
 # Faza
 
-Personal app for capturing what you like across life—categories, entries, tags, and (later) social sharing with friends. Early stage: product and learning-first; the codebase will grow in small steps.
+Faza is a personal **interest tracker** (and eventually a **social discovery** layer) for everything you care about—movies, music, books, food, places, and custom categories—so your taste is not lost to time.
 
-## Vision (high level)
+Memory is lossy: the album on repeat, the film you loved but cannot name, the restaurant from a trip. Faza is meant to be the **organized, searchable place** those things live, with **private-by-default** data and **friend-based sharing** added only when you are ready.
 
-- **Private by default**; sharing later with friend lists (similar in spirit to “close friends”).
-- **Flexible categories** and **entries** (general template first, specialized templates later for places, foods, brands, items, activities, songs, movies).
-- **Search- and tags-first** recall; structured forms per category.
-- **Swipe backfill** from external catalogs (e.g. movies) to add things from the past—planned after a solid core capture flow.
+## Vision (current direction)
 
-## Near-term MVP (simple slice)
+- **Private by default**; later: share with **named friend lists** (similar in spirit to “close friends”), not the whole world by default.
+- **Flexible categories** and **entries**—start with a **general** template, then specialized flows for places, foods, brands, items, activities, songs, movies.
+- **Search- and tags-first** recall; **structured forms** per category.
+- **Swipe / “explore” backfill** from **external catalogs** (for example TMDB for movies) to add things from the past—**after** a solid sign-up → categories → items core.
 
-1. **Create account** (sign up / sign in).
+## Near-term MVP (first code milestone)
+
+1. **Create account** (sign up and sign in).
 2. **Categories** — create and list.
 3. **Items** — create and list within a category.
 
-Social (friends, lists, feeds) comes **after** this core works on device.
+**Social** (friends, lists, feeds) ships **after** this core is stable on real devices.
 
-## Planned stack
+## Planned stack (iOS-first)
 
-- **Client:** iOS, Swift, SwiftUI (learning-friendly).
-- **Backend:** managed BaaS (e.g. Supabase or Firebase)—auth plus database for categories and items, with row-level security so each user only sees their own data.
+| Layer | Technology |
+| --- | --- |
+| Client | iOS, Swift, SwiftUI |
+| Backend | Managed BaaS (e.g. **Supabase** or **Firebase**) — auth + database |
+| Data rules | Row-level security so each user only reads/writes their own rows |
+
+Earlier drafts of this README mentioned React Native and a custom Node backend; the **current plan** is the table above unless that changes explicitly in the repo.
+
+## Later roadmap (not MVP)
+
+- Curated **browse / swipe** inside a category, powered by public APIs (movies, books, music, games, places—depending on category type).
+- **Time context** on entries (“when” as a specific date or a span / phase of life).
+- **Social layer**: friends, recommendations, small-group activities—staged after the personal vault works well.
 
 ## Repository status
 
-This repo currently holds **project direction and documentation**. Application source will be added incrementally (e.g. Xcode project or Swift package layout) as implementation starts.
+This repo currently holds **project direction**; **application source** (Xcode project layout, etc.) will land incrementally as implementation starts.
+
+## Contributing
+
+Early development. Ideas and issues are welcome.
 
 ## License
 
